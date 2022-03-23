@@ -14,7 +14,7 @@
 			<RowDefinition Height="40*"/>
 		</Grid.RowDefinitions>
 		<TextBox Text="{Binding Name}" Grid.Row="0" Watermark="Введите название заметки"/>
-		<TextBox Text="{Binding Text}" Grid.Row="1" Watermark="Введите текст заметки"/>
+		<TextBox Text="{Binding Text}" Grid.Row="1" Watermark="Введите текст заметки" AcceptsReturn="True" TextWrapping="Wrap"/>
 		<Button Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="OK" Command="{Binding OKButton}"/>
 		<Button Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Cancel" Command="{Binding CancelButton}"/>
 	</Grid>
