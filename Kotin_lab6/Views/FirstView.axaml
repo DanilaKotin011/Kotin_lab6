@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
-			 Width="450" Height="450"
              x:Class="Kotin_lab6.Views.FirstView"
 			 >
 
@@ -14,27 +13,31 @@
 			<RowDefinition Height="370*"/>
 			<RowDefinition Height="40*"/>
 		</Grid.RowDefinitions>
-		<DatePicker Grid.Row="0" Width="450" Height="40" SelectedDate="{Binding Currentdate}"/>
+		<DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Width="450" Height="40" SelectedDate="{Binding Currentdate}"/>
+		<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
 		<ItemsControl Grid.Row="1" Items="{Binding ItemsCurrent}">
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
 					<Grid ShowGridLines="False">
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="300"/>
-							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="300*"/>
+							<ColumnDefinition Width="50*"/>
+							<ColumnDefinition Width="50*"/>
 						</Grid.ColumnDefinitions>
 						<Grid.RowDefinitions>
 							<RowDefinition Height="*" MinHeight="30" MaxHeight="50"/>
 						</Grid.RowDefinitions>
-						<TextBox Text="{Binding Name}" Grid.Column="0" Grid.Row="0"/>
+						<Border Grid.Row="0" Grid.Column="0" BorderBrush="LightBlue" BorderThickness="2">
+							<TextBlock Margin="10,0,0,0" Focusable="False" Text="{Binding Name}"/>
+						</Border>
 						<Button Name="OpenButton" Command="{Binding $parent[Window].DataContext.OpenButton}" CommandParameter="{Binding}" Grid.Column="1" Grid.Row="0" > <Image Source="/Assets/in_zoom.ico"/></Button>
 						<Button Name="DeletelButton" Command="{Binding $parent[Window].DataContext.DeleteButton}" CommandParameter="{Binding}" Grid.Column="2" Grid.Row="0"> <Image Source="/Assets/trash.ico"/></Button>
 					</Grid>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
 		</ItemsControl>
-		<Button Command="{Binding $parent[Window].DataContext.AddButton}" Grid.Row="2" Width="450" Height="40">
+		</ScrollViewer>
+		<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding $parent[Window].DataContext.AddButton}" Grid.Row="2">
 			<Image Source="/Assets/add.ico"/>
 		</Button>
 
