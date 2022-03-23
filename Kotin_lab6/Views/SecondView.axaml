@@ -15,7 +15,7 @@
 		</Grid.RowDefinitions>
 		<TextBox Text="{Binding Name}" Grid.Row="0" Watermark="Введите название заметки"/>
 		<TextBox Text="{Binding Text}" Grid.Row="1" Watermark="Введите текст заметки"/>
-		<Button Grid.Row="2" Height="40" Width="450" Content="OK" Command="{Binding OKButton}"/>
-		<Button Grid.Row="3" Height="40" Width="450" Content="Cancel" Command="{Binding CancelButton}"/>
+		<Button Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="OK" Command="{Binding OKButton}"/>
+		<Button Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Cancel" Command="{Binding CancelButton}"/>
 	</Grid>
 </UserControl>
